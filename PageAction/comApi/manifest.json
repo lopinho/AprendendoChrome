@@ -1,0 +1,26 @@
+{
+    "name" : "UHUUL GOOGLE!",
+    "description" : "Apenas aparecer no google.com",
+    "version" : "1.0",
+    "manifest_version" : 2,
+    "page_action" : {
+        "default_icon" : "icon-48.png",
+        "default_title" : "UHUUL GOOGLE!"
+    },
+    "background" : {
+        "scripts" : ["background.js"]
+
+    },
+    "permissions" : [
+        "tabs",
+        "<all_urls>"
+    ],
+    "content_scripts": [{
+        "matches": ["https://*/*"],
+        "js": ["js/content_script.js"],
+        "run_at":     "document_end",
+        "all_frames": false
+    }],
+    "web_accessible_resources" : ["js/api.js"],
+    "icons" : {"128" : "icon-128.png"}
+}
